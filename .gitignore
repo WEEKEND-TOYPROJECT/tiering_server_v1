@@ -28,7 +28,7 @@ out/
 application.yml
 application-app.yml
 application-cors.yml
-application-oauth.yml
+
 
 ### NetBeans ###
 /nbproject/private/
