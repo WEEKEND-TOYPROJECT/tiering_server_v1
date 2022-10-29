@@ -26,19 +26,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column(name="username", nullable = false, length = 50)
+    @Column(name="user_name", nullable = false, length = 50)
     private String userName;
-    @Column(name = "nickname", nullable = true, length = 20)
+    @Column(name = "nick_name", nullable = true, length = 20)
     private String nickName;
 
+    @Enumerated(EnumType.STRING) // enum 문자열 자체가 저장(USER, ADMIN 등)
     @Column(name="authority")
-    @Enumerated(EnumType.ORDINAL) // enum 문자열 자체가 저장(USER, ADMIN 등)
     private Authority authority;
 
     @Enumerated(EnumType.STRING)
     private ProviderType providerType;
 
-
+    @Column(name = "oauth_id")
     private String oauthId;
 
 
