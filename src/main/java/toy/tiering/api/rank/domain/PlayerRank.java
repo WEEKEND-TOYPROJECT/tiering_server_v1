@@ -1,4 +1,4 @@
-package toy.tiering.api.rank;
+package toy.tiering.api.rank.domain;
 
 public enum PlayerRank {
 

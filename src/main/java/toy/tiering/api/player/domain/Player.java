@@ -1,11 +1,12 @@
-package toy.tiering.api.player;
+package toy.tiering.api.player.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.envers.Audited;
-import toy.tiering.api.team.Team;
+import toy.tiering.api.common.domain.BaseEntity;
+import toy.tiering.api.team.domain.Team;
 
 import javax.persistence.*;
 
@@ -16,7 +17,7 @@ import javax.persistence.*;
 @Table(name = "players")
 @Builder
 @Audited(withModifiedFlag = true)
-public class Player {
+public class Player extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

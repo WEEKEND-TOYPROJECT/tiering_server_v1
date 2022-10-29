@@ -1,4 +1,4 @@
-package toy.tiering.api.myteam;
+package toy.tiering.api.myteam.domain;
 
 import lombok.Getter;
 

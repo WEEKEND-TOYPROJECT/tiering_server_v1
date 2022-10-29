@@ -1,10 +1,11 @@
-package toy.tiering.api.myteam;
+package toy.tiering.api.myteam.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.envers.Audited;
+import toy.tiering.api.common.domain.BaseEntity;
 import toy.tiering.api.user.domain.User;
 
 import javax.persistence.*;
@@ -16,7 +17,7 @@ import javax.persistence.*;
 @Table(name = "myteams")
 @Builder
 @Audited(withModifiedFlag = true)
-public class MyTeam {
+public class MyTeam extends BaseEntity {
 
     @Id
     @Column(name = "myteam_id")
@@ -50,6 +51,9 @@ public class MyTeam {
 
     @Column(name = "myteam_logo", nullable = false)
     private String myTeamLogo;
+
+    @Column(name = "nickname")
+    private String nickName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
