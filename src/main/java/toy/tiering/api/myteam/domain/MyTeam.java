@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.envers.Audited;
 import toy.tiering.api.common.domain.BaseEntity;
+import toy.tiering.api.rank.domain.PlayerRank;
 import toy.tiering.api.user.domain.User;
 
 import javax.persistence.*;
@@ -28,29 +29,33 @@ public class MyTeam extends BaseEntity {
     private String myTeamName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "mysport_type", nullable = false)
+    @Column(name = "mysport_type")
     private SportType mySportType;
 
-    @Column(name = "myteam_player", nullable = false)
+    @Column(name = "myteam_player")
     private String myTeamPlayer;
 
-    @Column(name = "myteam_player_photo", nullable = false)
+    @Column(name = "myteam_player_photo")
     private String myTeamPlayerPhoto;
 
-    @Column(name = "myteam_player_position", nullable = false)
+    @Column(name = "myteam_player_position")
     private String myTeamPlayerPosition;
 
-    @Column(name = "myteam_player_stat", nullable = false)
+    @Column(name = "myteam_player_stat")
     private String myTeamPlayerStat;
 
-    @Column(name = "myteam_player_season", nullable = false)
+    @Column(name = "myteam_player_season")
     private String myTeamPlayerSeason;
 
-    @Column(name = "myteam_player_nation", nullable = false)
+    @Column(name = "myteam_player_nation")
     private String myTeamPlayerNation;
 
-    @Column(name = "myteam_logo", nullable = false)
+    @Column(name = "myteam_logo")
     private String myTeamLogo;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "player_rank")
+    private PlayerRank playerRank;
 
     @Column(name = "nickname")
     private String nickName;
@@ -58,5 +63,16 @@ public class MyTeam extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    public void changeMyTeam(String myTeamName, String myTeamPlayer, String myTeamPlayerPhoto, String myTeamPlayerPosition, String myTeamPlayerStat, String myTeamPlayerSeason, String myTeamPlayerNation) {
+        this.myTeamName = myTeamName;
+        this.myTeamPlayer = myTeamPlayer;
+        this.myTeamPlayerPhoto = myTeamPlayerPhoto;
+        this.myTeamPlayerPosition = myTeamPlayerPosition;
+        this.myTeamPlayerStat = myTeamPlayerStat;
+        this.myTeamPlayerSeason = myTeamPlayerSeason;
+        this.myTeamPlayerNation = myTeamPlayerNation;
+    }
+
 
 }

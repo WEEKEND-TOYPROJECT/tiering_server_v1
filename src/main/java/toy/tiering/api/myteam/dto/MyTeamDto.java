@@ -18,7 +18,7 @@ public class MyTeamDto {
     public static class Req {
         private User user;
         private SportType sportType;
-
+        private String myTeamName;
         private String myTeamPlayer;
         private String myTeamPlayerPhoto;
         private String myTeamPlayerPosition;
@@ -39,6 +39,7 @@ public class MyTeamDto {
 
             return MyTeam.builder()
                     .user(User.builder().userId(userId).build())
+                    .myTeamName(myTeamName)
                     .mySportType(sportType)
                     .myTeamPlayer(myTeamPlayer)
                     .myTeamPlayerPhoto(myTeamPlayerPhoto)

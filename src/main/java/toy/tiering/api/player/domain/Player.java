@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.envers.Audited;
 import toy.tiering.api.common.domain.BaseEntity;
-import toy.tiering.api.team.domain.Team;
+import toy.tiering.api.myteam.domain.MyTeam;
+import toy.tiering.api.myteam.domain.SportType;
 
 import javax.persistence.*;
 
@@ -42,7 +43,31 @@ public class Player extends BaseEntity {
     @Column(name = "player_nation")
     private String playerNation;
 
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
+    @Column(name = "player_team")
+    private String playerTeam;
+
+    @Column(name = "player_team_logo")
+    private String playerTeamLogo;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sport_type")
+    private SportType sportType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "myteam_id")
+    private MyTeam myTeam;
+
+
+    public void changePlayer(String playerName, String playerPhoto, String playerPosition, String playerStat, String playerSeason, String playerNation, String playerTeam, String playerTeamLogo) {
+        this.playerName = playerName;
+        this.playerPhoto = playerPhoto;
+        this.playerPosition = playerPosition;
+        this.playerStat = playerStat;
+        this.playerSeason = playerSeason;
+        this.playerNation = playerNation;
+        this.playerTeam = playerTeam;
+        this.playerTeamLogo = playerTeamLogo;
+    }
 }
+
+
