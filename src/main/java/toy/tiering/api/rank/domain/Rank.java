@@ -17,7 +17,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ranks")
 @Builder
-@Audited(withModifiedFlag = true)
+//@Audited(withModifiedFlag = true)
 public class Rank extends BaseEntity {
 
     @Id

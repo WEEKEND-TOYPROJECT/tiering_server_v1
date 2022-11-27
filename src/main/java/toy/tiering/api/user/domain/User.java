@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="users")
 @Slf4j
-@Audited(withModifiedFlag = true)
+//@Audited(withModifiedFlag = true)
 public class User {
     @Id
     @Column(name = "user_id")

@@ -17,7 +17,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "players")
 @Builder
-@Audited(withModifiedFlag = true)
+//@Audited(withModifiedFlag = true)
 public class Player extends BaseEntity {
 
     @Id

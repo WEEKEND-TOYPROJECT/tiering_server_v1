@@ -89,7 +89,7 @@ public class SearchMyTeamRepositoryImpl extends QuerydslRepositorySupport implem
 
         long count = tuple.fetchCount();
 
-        return new PageImpl<Object[]>(result.stream().map(t -> t.toArray()).collect(Collectors.toList()), pageable, count);
+        return new PageImpl<Object[]>(result.stream().map(Tuple::toArray).collect(Collectors.toList()), pageable, count);
     }
 }
 
