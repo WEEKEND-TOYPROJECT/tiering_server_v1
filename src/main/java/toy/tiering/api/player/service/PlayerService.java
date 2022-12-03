@@ -40,7 +40,6 @@ public class PlayerService {
         Player player = playerReqDto.toEntity();
 
         playerRepository.save(player);
-
     }
 
 }

@@ -1,9 +1,7 @@
 package toy.tiering.api.player.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.openqa.selenium.WebElement;
 import toy.tiering.api.common.util.SecurityUtil;
 import toy.tiering.api.myteam.domain.MyTeam;
 import toy.tiering.api.myteam.domain.SportType;
@@ -16,6 +14,7 @@ public class PlayerDto {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
+    @Setter
     public static class Req {
 
         private MyTeam myTeam;
@@ -53,7 +52,6 @@ public class PlayerDto {
     @Builder
     public static class Res {
         private Long playerId;
-
         private SportType sportType;
         private String playerName;
         private String playerPhoto;
